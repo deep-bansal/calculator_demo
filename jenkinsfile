@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKER_IMAGE_NAME = 'calculator'
-        GITHUB_REPO_URL = 'https://github.com/BThangaraju/calculator.git'
+        GITHUB_REPO_URL = 'https://github.com/deep-bansal/calculator_demo.git'
     }
 
     stages {
@@ -33,17 +33,6 @@ pipeline {
                     sh 'docker push iiitb/calculator'
                     }
                  }
-            }
-        }
-
-   stage('Run Ansible Playbook') {
-            steps {
-                script {
-                    ansiblePlaybook(
-                        playbook: 'deploy.yml',
-                        inventory: 'inventory'
-                     )
-                }
             }
         }
 
