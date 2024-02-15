@@ -1,3 +1,3 @@
-localhost ansible_user=deepbansal ansible_ssh_pass=deepbansal
+localhost ansible_user=deepbansal ansible_ssh_pass=Deepbansal@4101
 ansible_ssh_common_args = '-o StrictHostKeyChecking=no'
 
