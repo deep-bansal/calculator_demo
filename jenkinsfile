@@ -35,13 +35,14 @@ pipeline {
                  }
             }
         }
-         stage('Run Ansible Playbook') {
-            steps {
+        stage('Run Ansible Playbook') {
+        steps {
                 script {
-                    ansiblePlaybook(
-                        playbook: 'deploy.yml',
-                        inventory: 'inventory'
-                     )
+                    // Define the command to execute the Ansible playbook
+                    def ansibleCommand = "/opt/homebrew/bin/ansible-playbook -i inventory deploy.yml"
+        
+                    // Execute the command
+                    sh ansibleCommand
                 }
             }
         }
