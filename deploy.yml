@@ -13,6 +13,7 @@
     - name: Display Docker Pull Result
       debug:
         var: docker_pull_result
+  when: ansible_facts['os_family'] == "Debian"
         
     - name: Start Docker service
       service:
